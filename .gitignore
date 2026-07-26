@@ -27,3 +27,4 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+/LAYOUT_THREE_PAGES.md

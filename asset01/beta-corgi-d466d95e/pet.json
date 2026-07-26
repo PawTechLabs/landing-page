@@ -1,0 +1,77 @@
+{
+    "id": "beta-corgi",
+    "displayName": "贝塔",
+    "description": "贝塔是一只开心的小柯基，适合在 Codex 里陪伴代码工作。",
+    "spritesheetPath": "spritesheet.webp",
+    "category": "western",
+    "frameWidth": 192,
+    "frameHeight": 208,
+    "columns": 8,
+    "rows": 9,
+    "animations": {
+        "idle": {
+            "frames": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "fps": 6,
+            "loop": true
+        },
+        "walk_right": {
+            "frames": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+            ],
+            "fps": 12,
+            "loop": true
+        },
+        "walk_left": {
+            "frames": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23
+            ],
+            "fps": 12,
+            "loop": true
+        },
+        "wave": {
+            "frames": [
+                24,
+                25,
+                26,
+                27
+            ],
+            "fps": 8,
+            "loop": false
+        },
+        "sleep": {
+            "frames": [
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47
+            ],
+            "fps": 4,
+            "loop": true
+        }
+    }
+}

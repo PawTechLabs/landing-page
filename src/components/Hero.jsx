@@ -1,16 +1,13 @@
 import React, { useRef } from 'react';
 import { useApp } from '../context/AppContext';
-import {
-  Download, ShieldCheck, Heart,
-  Activity, Calendar, CheckCircle2, ChevronRight
-} from 'lucide-react';
-import { gsap, useGSAP, prefersReduced, useTilt, Words } from '../lib/motion';
+import { Download, ShieldCheck, ChevronRight } from 'lucide-react';
+import { gsap, useGSAP, prefersReduced, Words } from '../lib/motion';
+import { PhoneMockup } from './PhoneMockup';
 
 export const Hero = () => {
   const { t, apkInfo, downloadApk, downloading, downloadProgress } = useApp();
   const root = useRef(null);
   const parallaxRef = useRef(null);
-  const tiltRef = useTilt(11);
 
   useGSAP(() => {
     if (prefersReduced) return;
@@ -73,9 +70,13 @@ export const Hero = () => {
             >
               <Words text={t('hero.titlePart1')} />
               <span className="relative inline-block">
+                {/* Gradient phải nằm trên chính span bị GSAP transform.
+                    Đặt ở span cha thì `background-clip: text` không vẽ xuyên
+                    qua con có transform/overflow-hidden -> chữ trong suốt,
+                    mất hút ở cả light lẫn dark mode. */}
                 <Words
                   text={t('hero.titleHighlight')}
-                  className="bg-gradient-to-r from-brand-600 via-orange-500 to-amber-500 bg-clip-text text-transparent"
+                  wordClass="bg-gradient-to-r from-brand-600 via-orange-600 to-amber-600 dark:from-amber-300 dark:via-orange-300 dark:to-amber-200 bg-clip-text text-transparent"
                 />
                 <svg
                   className="absolute -bottom-1 left-0 w-full h-3 text-brand-500/40"
@@ -132,110 +133,9 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Cột mockup điện thoại */}
+          {/* Cột mockup điện thoại — bố cục 3 màn theo LAYOUT_THREE_PAGES.md */}
           <div ref={parallaxRef} className="lg:col-span-5 flex justify-center perspective-1000">
-            <div
-              ref={tiltRef}
-              data-hero-phone
-              className="relative w-full max-w-[340px] sm:max-w-[380px] cursor-pointer transform-style-3d group will-change-transform"
-            >
-              <div className="relative rounded-[40px] p-4 bg-gradient-to-b from-slate-900 to-slate-800 shadow-2xl border-4 border-slate-700/80 shadow-brand-500/20">
-
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-4 bg-slate-900 rounded-full z-30 flex items-center justify-center">
-                  <div className="w-10 h-1 bg-slate-700 rounded-full" />
-                </div>
-
-                <div className="relative bg-gradient-to-b from-amber-50 via-orange-50 to-amber-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 rounded-[32px] overflow-hidden pt-8 pb-6 px-4 space-y-4 border border-amber-200/50 dark:border-slate-800 min-h-[560px] flex flex-col justify-between">
-
-                  <div className="flex items-center justify-between text-[11px] font-bold text-slate-600 dark:text-slate-400 px-2 pt-2">
-                    <span>09:41</span>
-                    <div className="flex items-center gap-1.5">
-                      <Activity className="w-3 h-3 text-emerald-500 animate-pulse" />
-                      <span>IPIF App</span>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-4 rounded-2xl border border-white/60 dark:border-slate-700 shadow-lg text-center space-y-3 relative overflow-hidden">
-                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold">
-                      ● LIVE PET
-                    </div>
-
-                    <div className="relative w-28 h-28 mx-auto my-2 rounded-full bg-gradient-to-tr from-orange-400 via-amber-300 to-amber-200 flex items-center justify-center text-6xl shadow-inner animate-float-slow">
-                      🐕
-                      <div className="absolute -bottom-1 right-0 bg-white dark:bg-slate-700 p-1.5 rounded-full shadow">
-                        <Heart className="w-4 h-4 text-rose-500 fill-rose-500 animate-ping" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-extrabold text-lg text-slate-800 dark:text-white">
-                        Mochi — Golden Cún
-                      </h4>
-                      <p className="text-xs text-emerald-600 dark:text-emerald-400 font-bold">
-                        {t('hero.mockupStatus')}
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-2 text-left pt-1">
-                      <div className="bg-amber-100/60 dark:bg-slate-900/60 p-2 rounded-xl text-[11px]">
-                        <span className="text-slate-500 dark:text-slate-400">Tâm trạng:</span>
-                        <p className="font-bold text-slate-800 dark:text-slate-200">😄 98% Vui</p>
-                      </div>
-                      <div className="bg-orange-100/60 dark:bg-slate-900/60 p-2 rounded-xl text-[11px]">
-                        <span className="text-slate-500 dark:text-slate-400">Chi phí mô phỏng:</span>
-                        <p className="font-bold text-brand-600 dark:text-brand-400">1.2M đ/tháng</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-white/60 dark:border-slate-700 shadow flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-teal-100 dark:bg-teal-950 text-teal-600 dark:text-teal-300">
-                      <Calendar className="w-5 h-5" />
-                    </div>
-                    <div className="flex-1 text-left">
-                      <p className="text-xs font-bold text-slate-800 dark:text-slate-100">
-                        {t('hero.mockupNextVaccine')}
-                      </p>
-                      <p className="text-[10px] text-slate-500 dark:text-slate-400">
-                        Phòng khám thú y Bệnh viện Pet Care
-                      </p>
-                    </div>
-                    <CheckCircle2 className="w-4 h-4 text-teal-500" />
-                  </div>
-
-                  <div className="grid grid-cols-4 text-center py-2 border-t border-slate-200 dark:border-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">
-                    <div className="text-brand-500">🏠 Home</div>
-                    <div>🐾 Pet Ảo</div>
-                    <div>📚 Learn</div>
-                    <div>🩺 Medical</div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div
-                data-hero-badge
-                className="absolute -top-4 -left-6 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-3d border border-slate-100 dark:border-slate-700 flex items-center gap-2.5 text-left animate-float-fast z-30"
-              >
-                <div className="p-2 rounded-xl bg-orange-100 text-orange-600 text-xl">✨</div>
-                <div>
-                  <p className="text-xs font-extrabold text-slate-800 dark:text-white">Thú Cưng Ảo</p>
-                  <p className="text-[10px] text-slate-500">Mô phỏng chi phí thật</p>
-                </div>
-              </div>
-
-              <div
-                data-hero-badge
-                className="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-3d border border-slate-100 dark:border-slate-700 flex items-center gap-2.5 text-left animate-float-slow z-30"
-              >
-                <div className="p-2 rounded-xl bg-teal-100 text-teal-600 text-xl">🩺</div>
-                <div>
-                  <p className="text-xs font-extrabold text-slate-800 dark:text-white">Hồ Sơ Thú Y</p>
-                  <p className="text-[10px] text-slate-500">Tự động nhắc lịch</p>
-                </div>
-              </div>
-
-            </div>
+            <PhoneMockup />
           </div>
 
         </div>

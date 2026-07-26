@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { Heart, Sparkles, X, Utensils, Smile, Volume2 } from 'lucide-react';
+import { X } from 'lucide-react';
+import { PetSprite } from './PetSprite';
 
 export const InteractivePetWidget = () => {
   const { t } = useApp();
 
   const [isOpen, setIsOpen] = useState(false);
   const [petState, setPetState] = useState({
-    name: 'Mochi',
+    name: 'Milo',
     happiness: 95,
     hunger: 80,
     statusText: 'Đang rất vui!',
-    avatar: '🐶'
   });
+  // Sprite lấy từ /asset01 — mỗi hành động phát một clip rồi quay về idle
+  const [petAnim, setPetAnim] = useState('idle');
 
-  const [bubbleMessage, setBubbleMessage] = useState('Gâu gâu! Mình là Mochi, thử nuôi mình nhé! 🐾');
+  const [bubbleMessage, setBubbleMessage] = useState('Chào bạn! Mình là Milo, thử nuôi mình nhé! 🐾');
 
   const handleFeed = () => {
     setPetState(prev => ({
       ...prev,
       hunger: Math.min(100, prev.hunger + 20),
       happiness: Math.min(100, prev.happiness + 5),
-      avatar: '🐶'
     }));
+    setPetAnim('eat');
     setBubbleMessage('Ngon quá! Cảm ơn bạn đã cho ăn 🍖');
   };
 
@@ -30,9 +32,9 @@ export const InteractivePetWidget = () => {
     setPetState(prev => ({
       ...prev,
       happiness: Math.min(100, prev.happiness + 15),
-      avatar: '🐕'
     }));
-    setBubbleMessage('Thích quá nà! ❤️ Gâu gâu!');
+    setPetAnim('wave');
+    setBubbleMessage('Thích quá nà! ❤️');
   };
 
   const handlePlay = () => {
@@ -40,8 +42,8 @@ export const InteractivePetWidget = () => {
       ...prev,
       happiness: Math.min(100, prev.happiness + 10),
       hunger: Math.max(10, prev.hunger - 10),
-      avatar: '🐾'
     }));
+    setPetAnim('jump');
     setBubbleMessage('Bắt bóng vui cực kỳ! 🎾');
   };
 
@@ -77,10 +79,20 @@ export const InteractivePetWidget = () => {
             {bubbleMessage}
           </div>
 
-          {/* Pet Animated Avatar */}
-          <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-amber-300 to-orange-400 flex items-center justify-center text-4xl shadow-inner animate-float-fast">
-            {petState.avatar}
-          </div>
+          {/* Pet Animated Avatar — sprite thật từ /asset01 */}
+          <button
+            type="button"
+            onClick={handlePet}
+            className="mx-auto block rounded-2xl bg-gradient-to-tr from-amber-200 to-orange-300 dark:from-slate-800 dark:to-slate-700 p-1 shadow-inner"
+          >
+            <PetSprite
+              petId="milo"
+              anim={petAnim}
+              width={92}
+              onComplete={() => setPetAnim('idle')}
+              className="mx-auto animate-float-fast"
+            />
+          </button>
 
           {/* Progress Meters */}
           <div className="space-y-1.5 text-[11px] font-bold text-slate-600 dark:text-slate-300">

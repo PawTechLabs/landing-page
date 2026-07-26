@@ -15,6 +15,14 @@
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
+  /* Vùng cuộn bên trong mockup: cuộn được nhưng không lòi thanh scrollbar */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Custom 3D & Decorative FX */

@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { Gamepad2, HeartHandshake, DollarSign, Sparkles, ShoppingBag, ShieldCheck, Download } from 'lucide-react';
+import { PetSprite } from './PetSprite';
 
 export const VirtualPetShowcase = () => {
   const { t, downloadApk } = useApp();
   const [activeScene, setActiveScene] = useState('cozy-living');
+  // Sheet của scene khác chỉ được tải khi người dùng bấm sang scene đó
+  const [petAnim, setPetAnim] = useState('idle');
 
   const scenes = [
-    { id: 'cozy-living', name: 'Phòng Khách Ấm Cúng', bg: 'from-amber-100 via-orange-100 to-rose-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950', petEmoji: '🐶', price: 'Miễn phí' },
-    { id: 'cherry-park', name: 'Công Viên Hoa Anh Đào', bg: 'from-pink-100 via-rose-100 to-purple-100 dark:from-purple-950 dark:via-pink-950 dark:to-slate-900', petEmoji: '🐱', price: '15.000đ' },
-    { id: 'cyber-room', name: 'Phòng Cyberpunk 3D', bg: 'from-indigo-100 via-purple-100 to-teal-100 dark:from-indigo-950 dark:via-slate-900 dark:to-purple-950', petEmoji: '🐰', price: '25.000đ' }
+    { id: 'cozy-living', name: 'Phòng Khách Ấm Cúng', bg: 'from-amber-100 via-orange-100 to-rose-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950', petEmoji: '🐶', petId: 'mochi', price: 'Miễn phí' },
+    { id: 'cherry-park', name: 'Công Viên Hoa Anh Đào', bg: 'from-pink-100 via-rose-100 to-purple-100 dark:from-purple-950 dark:via-pink-950 dark:to-slate-900', petEmoji: '🐱', petId: 'milo', price: '15.000đ' },
+    { id: 'cyber-room', name: 'Phòng Cyberpunk 3D', bg: 'from-indigo-100 via-purple-100 to-teal-100 dark:from-indigo-950 dark:via-slate-900 dark:to-purple-950', petEmoji: '🐰', petId: 'beta', price: '25.000đ' }
   ];
+
+  const scene = scenes.find(s => s.id === activeScene) || scenes[0];
 
   return (
     <section id="virtual-pet" className="py-32 md:py-44 relative overflow-hidden bg-gradient-to-b from-orange-50/50 via-amber-50/30 to-white dark:from-slate-950 dark:via-slate-900 dark:to-[#0b0f19]">
@@ -70,24 +75,34 @@ export const VirtualPetShowcase = () => {
               </div>
 
               {/* Dynamic 3D Scene Viewer */}
-              <div className={`relative h-72 sm:h-80 rounded-3xl bg-gradient-to-tr ${scenes.find(s => s.id === activeScene)?.bg} p-6 flex flex-col justify-between border-2 border-white/80 dark:border-slate-700 shadow-inner transition-all duration-500 overflow-hidden`}>
-                
+              <div className={`relative h-72 sm:h-80 rounded-3xl bg-gradient-to-tr ${scene.bg} p-6 flex flex-col justify-between border-2 border-white/80 dark:border-slate-700 shadow-inner transition-all duration-500 overflow-hidden`}>
+
                 {/* Floating Scene Ornaments */}
                 <div className="absolute top-4 left-4 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-extrabold text-slate-700 dark:text-slate-200 border border-white/40">
-                  📍 {scenes.find(s => s.id === activeScene)?.name}
+                  📍 {scene.name}
                 </div>
 
                 <div className="absolute top-4 right-4 bg-amber-400 text-slate-900 font-extrabold text-xs px-3 py-1 rounded-full shadow">
-                  💰 {scenes.find(s => s.id === activeScene)?.price}
+                  💰 {scene.price}
                 </div>
 
-                {/* Animated 3D Pet in Scene */}
+                {/* Pet sprite thật từ /asset01 — chạm vào để bé phản hồi */}
                 <div className="my-auto text-center space-y-2">
-                  <div className="text-7xl sm:text-8xl animate-float-slow filter drop-shadow-2xl">
-                    {scenes.find(s => s.id === activeScene)?.petEmoji}
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setPetAnim('wave')}
+                    className="mx-auto block animate-float-slow drop-shadow-2xl"
+                    title="Chạm để chào bé"
+                  >
+                    <PetSprite
+                      petId={scene.petId}
+                      anim={petAnim}
+                      width={132}
+                      onComplete={() => setPetAnim('idle')}
+                    />
+                  </button>
                   <div className="inline-block bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-slate-800 dark:text-slate-200 border border-white/40 shadow">
-                    Bé đang thư giãn trong {scenes.find(s => s.id === activeScene)?.name}
+                    Bé đang thư giãn trong {scene.name}
                   </div>
                 </div>
 

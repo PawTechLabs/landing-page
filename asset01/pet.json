@@ -1,0 +1,99 @@
+{
+    "id": "77",
+    "displayName": "77",
+    "description": "A compact gray-and-white round-faced cat based on the user pet photos.",
+    "spritesheetPath": "spritesheet.webp",
+    "category": "creature",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 8,
+    "rows": 8,
+    "animations": {
+        "idle": {
+            "frames": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "fps": 6,
+            "loop": true
+        },
+        "walk_right": {
+            "frames": [
+                8,
+                9,
+                10,
+                11
+            ],
+            "fps": 10,
+            "loop": true
+        },
+        "walk_left": {
+            "frames": [
+                16,
+                17,
+                18,
+                19
+            ],
+            "fps": 10,
+            "loop": true
+        },
+        "wave": {
+            "frames": [
+                24,
+                25
+            ],
+            "fps": 8,
+            "loop": false
+        },
+        "sleep": {
+            "frames": [
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39
+            ],
+            "fps": 4,
+            "loop": true
+        },
+        "eat": {
+            "frames": [
+                48,
+                49,
+                50,
+                51
+            ],
+            "fps": 8,
+            "loop": false
+        },
+        "play": {
+            "frames": [
+                56,
+                57,
+                58,
+                59,
+                60,
+                61
+            ],
+            "fps": 12,
+            "loop": true
+        },
+        "jump": {
+            "frames": [
+                64,
+                65,
+                66,
+                67,
+                68,
+                69
+            ],
+            "fps": 12,
+            "loop": false
+        }
+    }
+}
