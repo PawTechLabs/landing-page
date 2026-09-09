@@ -61,14 +61,14 @@ export const AppProvider = ({ children }) => {
       }
     }
     return {
-      version: 'v1.2.4-stable',
-      releaseDate: '25/07/2026',
-      fileSize: '28.4 MB',
-      fileName: 'ipif-pet-care-v1.2.4.apk',
-      sha256: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+      version: 'v1.0.0-release',
+      releaseDate: '09/09/2026',
+      fileSize: '74.0 MB',
+      fileName: 'ipif-latest.apk',
+      sha256: 'cf0f5725937447cdb663494b356727a148fa7e04bf872e93d9cfda77f0da6dcb',
       changelog: lang === 'vi' 
-        ? '• Ra mắt tính năng Thú Cưng Ảo 3D mới.\n• Tối ưu đồng bộ Sổ sức khỏe & tiêm phòng.\n• Kết nối trực tiếp hệ thống phòng khám thú y.'
-        : '• Launched 3D Virtual Pet feature.\n• Optimized Health & Vaccination syncing.\n• Integrated partner vet hospital network.',
+        ? '• Ra mắt phiên bản chính thức IPIF Pet Care.\n• Tích hợp hệ thống Thú Cưng Ảo tương tác thời gian thực.\n• Đồng bộ Sổ sức khỏe, lịch tiêm phòng và kết nối phòng khám thú y.'
+        : '• Official release of IPIF Pet Care.\n• Integrated interactive real-time Virtual Pet.\n• Synchronized Health Records, vaccination schedules & vet clinic network.',
       totalDownloads: 14280,
       customBlobUrl: null
     };
@@ -121,17 +121,11 @@ export const AppProvider = ({ children }) => {
       setDownloadProgress(100);
       
       // Trigger actual download
-      let downloadUrl = apkInfo.customBlobUrl;
-      if (!downloadUrl) {
-        // Create dummy APK blob content
-        const dummyContent = `IPIF Pet Care App APK Build ${apkInfo.version}\nPackage: com.ipif.petcare\nBuild Date: ${apkInfo.releaseDate}`;
-        const blob = new Blob([dummyContent], { type: 'application/vnd.android.package-archive' });
-        downloadUrl = URL.createObjectURL(blob);
-      }
+      const downloadUrl = apkInfo.customBlobUrl || '/ipif-latest.apk';
 
       const a = document.createElement('a');
       a.href = downloadUrl;
-      a.download = apkInfo.fileName || `ipif-app-${apkInfo.version}.apk`;
+      a.download = apkInfo.fileName || 'ipif-latest.apk';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
