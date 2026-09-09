@@ -65,7 +65,7 @@ export const AppProvider = ({ children }) => {
       releaseDate: '09/09/2026',
       fileSize: '74.0 MB',
       fileName: 'ipif-latest.apk',
-      sha256: 'cf0f5725937447cdb663494b356727a148fa7e04bf872e93d9cfda77f0da6dcb',
+      sha256: 'dfd438411a6e2396947e4411a04d939afa17e12913e24499beb5af97d8b20192',
       changelog: lang === 'vi' 
         ? '• Ra mắt phiên bản chính thức IPIF Pet Care.\n• Tích hợp hệ thống Thú Cưng Ảo tương tác thời gian thực.\n• Đồng bộ Sổ sức khỏe, lịch tiêm phòng và kết nối phòng khám thú y.'
         : '• Official release of IPIF Pet Care.\n• Integrated interactive real-time Virtual Pet.\n• Synchronized Health Records, vaccination schedules & vet clinic network.',
