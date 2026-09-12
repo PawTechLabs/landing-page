@@ -1,7 +1,26 @@
 {
+  "headers": [
+    {
+      "source": "/ipif-latest.apk",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/vnd.android.package-archive"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"ipif-latest.apk\""
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!ipif-latest\\.apk|logo\\.png|assets/).*)",
       "destination": "/index.html"
     }
   ]

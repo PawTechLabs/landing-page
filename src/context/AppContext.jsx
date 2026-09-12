@@ -107,29 +107,35 @@ export const AppProvider = ({ children }) => {
     setDownloading(true);
     setDownloadProgress(10);
 
+    // Trigger download immediately so mobile browsers don't block user gesture
+    const downloadUrl = apkInfo.customBlobUrl || '/ipif-latest.apk';
+    const a = document.createElement('a');
+    a.href = downloadUrl;
+    a.download = apkInfo.fileName || 'ipif-latest.apk';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+    }, 100);
+
+    // If on mobile browser, also navigate as fallback
+    if (!apkInfo.customBlobUrl && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      window.location.href = downloadUrl;
+    }
+
     const interval = setInterval(() => {
       setDownloadProgress(prev => {
         if (prev >= 90) {
           clearInterval(interval);
           return 90;
         }
-        return prev + 20;
+        return prev + 25;
       });
-    }, 200);
+    }, 150);
 
     setTimeout(() => {
       setDownloadProgress(100);
       
-      // Trigger actual download
-      const downloadUrl = apkInfo.customBlobUrl || '/ipif-latest.apk';
-
-      const a = document.createElement('a');
-      a.href = downloadUrl;
-      a.download = apkInfo.fileName || 'ipif-latest.apk';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
       // Increment download counter
       setApkInfo(prev => ({
         ...prev,
@@ -150,9 +156,9 @@ export const AppProvider = ({ children }) => {
       setTimeout(() => {
         setDownloading(false);
         setDownloadProgress(0);
-      }, 1200);
+      }, 800);
 
-    }, 1200);
+    }, 800);
   };
 
   return (
