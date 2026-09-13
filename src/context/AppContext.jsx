@@ -68,7 +68,7 @@ export const AppProvider = ({ children }) => {
       releaseDate: '13/09/2026',
       fileSize: '80.8 MB',
       fileName: 'ipif-v1.0.1.apk',
-      sha256: 'b1b64a5ce359609d562d0d25c786f9ce1de564a02801d98fe029dc76f8e74fe3',
+      sha256: '1ed26365f9448c8f8e9502ca877b5251a46df9b6faef33e093be25b558e9926d',
       changelog: lang === 'vi' 
         ? '• Nâng cấp bản đồ Google Maps HD tiếng Việt cực sắc nét, chi tiết và không watermark.\n• Khắc phục hoàn toàn lỗi hiển thị thú cưng ảo (nhận diện đúng chú cún Corgi ngay khi mở màn hình).\n• Sắp xếp lại giao diện thanh trạng thái thú ảo, khắc phục lỗi chữ đè lấn chỉ số.\n• Tối ưu tải file APK một chạm mượt mà trên mọi thiết bị.'
         : '• Upgraded to high-definition Google Maps tiles with native Vietnamese labeling and no watermark.\n• Fixed virtual pet initial species load to display Corgi dog instantly.\n• Redesigned virtual pet top HUD to eliminate text and stats overlap.\n• Optimized single-tap APK download experience on mobile browsers.',
