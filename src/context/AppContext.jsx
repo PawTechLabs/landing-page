@@ -67,7 +67,7 @@ export const AppProvider = ({ children }) => {
       version: 'v1.0.1',
       releaseDate: '13/09/2026',
       fileSize: '80.8 MB',
-      fileName: 'ipif-latest.apk',
+      fileName: 'ipif-v1.0.1.apk',
       sha256: 'a972fba295e8095329feb9e84eb31c48c4a3d124ed4d7d99fd9617b585d81e85',
       changelog: lang === 'vi' 
         ? '• Cập nhật v1.0.1: Sửa lỗi hiển thị bản đồ OpenStreetMap trên thiết bị di động.\n• Tối ưu tải ảnh bài viết học viện & bài đăng cộng đồng.\n• Khắc phục bố cục thanh điều hướng và giao diện trang cá nhân.\n• Chuẩn hóa toàn bộ biểu tượng theo chủ đề màu sắc IPIF.'
@@ -111,10 +111,11 @@ export const AppProvider = ({ children }) => {
     setDownloadProgress(10);
 
     // Trigger download immediately so mobile browsers don't block user gesture
-    const downloadUrl = apkInfo.customBlobUrl || '/ipif-latest.apk';
+    const fallbackFile = apkInfo.fileName || 'ipif-v1.0.1.apk';
+    const downloadUrl = apkInfo.customBlobUrl || `/${fallbackFile}`;
     const a = document.createElement('a');
     a.href = downloadUrl;
-    a.download = apkInfo.fileName || 'ipif-latest.apk';
+    a.download = fallbackFile;
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {
