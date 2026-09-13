@@ -55,20 +55,23 @@ export const AppProvider = ({ children }) => {
     const saved = localStorage.getItem('ipif_apk_info');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (parsed && parsed.version === 'v1.0.1') {
+          return parsed;
+        }
       } catch (e) {
         console.error("Error parsing saved apk info", e);
       }
     }
     return {
-      version: 'v1.0.0-release',
-      releaseDate: '09/09/2026',
-      fileSize: '74.0 MB',
+      version: 'v1.0.1',
+      releaseDate: '13/09/2026',
+      fileSize: '80.8 MB',
       fileName: 'ipif-latest.apk',
-      sha256: 'dfd438411a6e2396947e4411a04d939afa17e12913e24499beb5af97d8b20192',
+      sha256: 'a972fba295e8095329feb9e84eb31c48c4a3d124ed4d7d99fd9617b585d81e85',
       changelog: lang === 'vi' 
-        ? '• Ra mắt phiên bản chính thức IPIF Pet Care.\n• Tích hợp hệ thống Thú Cưng Ảo tương tác thời gian thực.\n• Đồng bộ Sổ sức khỏe, lịch tiêm phòng và kết nối phòng khám thú y.'
-        : '• Official release of IPIF Pet Care.\n• Integrated interactive real-time Virtual Pet.\n• Synchronized Health Records, vaccination schedules & vet clinic network.',
+        ? '• Cập nhật v1.0.1: Sửa lỗi hiển thị bản đồ OpenStreetMap trên thiết bị di động.\n• Tối ưu tải ảnh bài viết học viện & bài đăng cộng đồng.\n• Khắc phục bố cục thanh điều hướng và giao diện trang cá nhân.\n• Chuẩn hóa toàn bộ biểu tượng theo chủ đề màu sắc IPIF.'
+        : '• Update v1.0.1: Fixed OpenStreetMap rendering on mobile devices.\n• Optimized image loading for articles & community posts.\n• Fixed bottom navigation bar & profile screen layouts.\n• Standardized iconography with IPIF brand color theme.',
       totalDownloads: 14280,
       customBlobUrl: null
     };

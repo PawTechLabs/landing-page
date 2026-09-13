@@ -19,7 +19,7 @@ export const vi = {
     description: "IPIF giúp bạn gỡ bỏ rào cản kiến thức, theo dõi hồ sơ tiêm phòng – sức khỏe cho pet thật, và trải nghiệm Thú Cưng Ảo mô phỏng chi phí & trách nhiệm thực tế trước khi nhận nuôi ngoài đời.",
     primaryCta: "Tải APK Ngay (Miễn Phí)",
     secondaryCta: "Trải Nghiệm Thú Cưng Ảo",
-    verBadge: "Bản APK v1.2.4 • Đã kiểm duyệt an toàn",
+    verBadge: "Đã kiểm duyệt an toàn",
     statUsers: "100.000+",
     statUsersLabel: "Người dùng đăng ký",
     statRating: "4.9/5 ★",

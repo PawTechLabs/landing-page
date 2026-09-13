@@ -19,7 +19,7 @@ export const en = {
     description: "IPIF removes knowledge barriers, tracks health & vaccination records for your real pet, and simulates true cost & daily responsibility via a Virtual Pet before adopting in real life.",
     primaryCta: "Download APK Now (Free)",
     secondaryCta: "Explore Virtual Pet",
-    verBadge: "APK Version v1.2.4 • Verified Safe",
+    verBadge: "Verified Safe",
     statUsers: "100,000+",
     statUsersLabel: "Registered Users",
     statRating: "4.9/5 ★",
