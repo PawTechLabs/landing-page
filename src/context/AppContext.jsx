@@ -68,7 +68,7 @@ export const AppProvider = ({ children }) => {
       releaseDate: '13/09/2026',
       fileSize: '80.8 MB',
       fileName: 'ipif-v1.0.1.apk',
-      sha256: '61e894494fba04c24a10191b27931d412b7da04f75286214061c8c23240a2708',
+      sha256: '4205c9e173aef11146108fc9ff86d3b33cd8cc931736bccd316fdb8d683ff7f4',
       changelog: lang === 'vi' 
         ? '• Cập nhật v1.0.1: Chuyển sang máy chủ bản đồ CartoDB Voyager CDN tốc độ cao tải tức thì.\n• Tối ưu ảnh bài đăng cộng đồng hiển thị trọn vẹn kích thước nguyên bản, không bị cắt xén.\n• Khắc phục bố cục thanh điều hướng và giao diện trang cá nhân.\n• Chuẩn hóa toàn bộ biểu tượng theo chủ đề màu sắc IPIF.'
         : '• Update v1.0.1: Switched to CartoDB Voyager CDN high-speed map tiles.\n• Optimized community post images to render in full natural aspect ratio without cropping.\n• Fixed bottom navigation bar & profile screen layouts.\n• Standardized iconography with IPIF brand color theme.',
