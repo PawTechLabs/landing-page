@@ -68,10 +68,10 @@ export const AppProvider = ({ children }) => {
       releaseDate: '13/09/2026',
       fileSize: '80.8 MB',
       fileName: 'ipif-v1.0.1.apk',
-      sha256: '4205c9e173aef11146108fc9ff86d3b33cd8cc931736bccd316fdb8d683ff7f4',
+      sha256: 'b1b64a5ce359609d562d0d25c786f9ce1de564a02801d98fe029dc76f8e74fe3',
       changelog: lang === 'vi' 
-        ? '• Cập nhật v1.0.1: Chuyển sang máy chủ bản đồ CartoDB Voyager CDN tốc độ cao tải tức thì.\n• Tối ưu ảnh bài đăng cộng đồng hiển thị trọn vẹn kích thước nguyên bản, không bị cắt xén.\n• Khắc phục bố cục thanh điều hướng và giao diện trang cá nhân.\n• Chuẩn hóa toàn bộ biểu tượng theo chủ đề màu sắc IPIF.'
-        : '• Update v1.0.1: Switched to CartoDB Voyager CDN high-speed map tiles.\n• Optimized community post images to render in full natural aspect ratio without cropping.\n• Fixed bottom navigation bar & profile screen layouts.\n• Standardized iconography with IPIF brand color theme.',
+        ? '• Nâng cấp bản đồ Google Maps HD tiếng Việt cực sắc nét, chi tiết và không watermark.\n• Khắc phục hoàn toàn lỗi hiển thị thú cưng ảo (nhận diện đúng chú cún Corgi ngay khi mở màn hình).\n• Sắp xếp lại giao diện thanh trạng thái thú ảo, khắc phục lỗi chữ đè lấn chỉ số.\n• Tối ưu tải file APK một chạm mượt mà trên mọi thiết bị.'
+        : '• Upgraded to high-definition Google Maps tiles with native Vietnamese labeling and no watermark.\n• Fixed virtual pet initial species load to display Corgi dog instantly.\n• Redesigned virtual pet top HUD to eliminate text and stats overlap.\n• Optimized single-tap APK download experience on mobile browsers.',
       totalDownloads: 14280,
       customBlobUrl: null
     };
@@ -110,7 +110,7 @@ export const AppProvider = ({ children }) => {
     setDownloading(true);
     setDownloadProgress(10);
 
-    // Trigger download immediately so mobile browsers don't block user gesture
+    // Trigger single download
     const fallbackFile = apkInfo.fileName || 'ipif-v1.0.1.apk';
     const downloadUrl = apkInfo.customBlobUrl || `/${fallbackFile}`;
     const a = document.createElement('a');
@@ -121,11 +121,6 @@ export const AppProvider = ({ children }) => {
     setTimeout(() => {
       document.body.removeChild(a);
     }, 100);
-
-    // If on mobile browser, also navigate as fallback
-    if (!apkInfo.customBlobUrl && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location.href = downloadUrl;
-    }
 
     const interval = setInterval(() => {
       setDownloadProgress(prev => {
