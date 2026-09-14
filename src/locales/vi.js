@@ -214,26 +214,26 @@ export const vi = {
     freePeriod: "mãi mãi",
     freeDesc: "Dành cho tất cả mọi người muốn trải nghiệm Thú cưng ảo & kho kiến thức cơ bản.",
     freeFeatures: [
-      "Trải nghiệm Thú Cưng Ảo cơ bản",
-      "Duyệt Kho Kiến Thức Learn",
-      "Theo dõi 1 Thú Cưng thật ngoài đời",
-      "Đặt lịch khám bệnh viện thú y"
+      "Trải nghiệm Thú Cưng Ảo tương tác",
+      "Duyệt Kho Cẩm Nang & Mẹo chăm sóc hàng ngày",
+      "Quản lý tối đa 2 Thú Cưng thật ngoài đời",
+      "Tìm kiếm bệnh viện thú y & Pet Shop gần nhất"
     ],
     freeCta: "Tải Dùng Miễn Phí",
     
-    premiumTitle: "Gói IPIF Premium",
+    premiumTitle: "Gói IPIF VIP Care",
     premiumPrice: "50.000đ",
-    premiumPeriod: "/ tháng",
-    premiumDesc: "Mở khóa toàn bộ sức mạnh quản lý y tế nâng cao & không giới hạn vật phẩm 3D.",
+    premiumPeriod: "/ tháng (39k dùng thử)",
+    premiumDesc: "Mở khóa toàn bộ đặc quyền quản lý y tế cao cấp, không giới hạn thú cưng & quà tặng mỗi tháng.",
     premiumFeatures: [
       "Tất cả tính năng trong gói Free",
       "Quản lý KHÔNG GIỚI HẠN số lượng thú cưng thật",
-      "Tự động nhắc lịch tiêm phòng, tẩy giun SMS/Push",
-      "Đồng bộ Hồ Sơ Bệnh Án Số với phòng khám liên kết",
-      "Tặng thêm Background Scene 3D độc quyền mỗi tháng",
-      "Giảm 10% khi đặt dịch vụ spa/khám thú y trên IPIF"
+      "Huy hiệu VIP Paw 👑 nổi bật trên bài đăng & hồ sơ",
+      "Đăng bài mạng xã hội 6 ảnh chất lượng 2K sắc nét",
+      "Xuất Sổ Y Bạ & Tiêm Chủng điện tử PDF chuẩn y tế",
+      "Tặng Xu nuôi thú cưng ảo định kỳ mỗi gói"
     ],
-    premiumCta: "Nâng Cấp Premium",
+    premiumCta: "Nâng Cấp VIP Ngay",
     popularBadge: "KHUYÊN DÙNG"
   },
   apkHub: {

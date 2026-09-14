@@ -214,26 +214,26 @@ export const en = {
     freePeriod: "forever",
     freeDesc: "For everyone wanting to experience Virtual Pet simulation & core knowledge base.",
     freeFeatures: [
-      "Basic Virtual Pet simulation experience",
-      "Access to Learn knowledge library",
-      "Track 1 real pet health profile",
-      "Vet hospital appointment booking"
+      "Interactive Virtual Pet simulation",
+      "Access to Pet Care Knowledge & Daily Tips",
+      "Manage up to 2 real pet health profiles",
+      "Vet Hospital & Pet Shop directory search"
     ],
     freeCta: "Get Started Free",
     
-    premiumTitle: "IPIF Premium Plan",
+    premiumTitle: "IPIF VIP Care Plan",
     premiumPrice: "50,000 VND",
-    premiumPeriod: "/ month (~$2)",
-    premiumDesc: "Unlock full advanced medical tracking & unlimited 3D virtual pet items.",
+    premiumPeriod: "/ month (39k trial)",
+    premiumDesc: "Unlock full advanced pet medical tracking, unlimited pet profiles & monthly perks.",
     premiumFeatures: [
       "All features included in Free plan",
       "UNLIMITED real pet profiles",
-      "Automated SMS/Push vaccination & deworming alerts",
-      "Sync Digital Medical Records with partner clinics",
-      "Exclusive 3D Virtual Pet Background Scene every month",
-      "10% discount on clinic & grooming services"
+      "Golden VIP Paw 👑 badge on posts & profile",
+      "Post community feed with 6 crisp 2K photos",
+      "Export Official Pet Health Passport (PDF)",
+      "Periodic Virtual Pet Coins reward with each pack"
     ],
-    premiumCta: "Upgrade to Premium",
+    premiumCta: "Upgrade to VIP",
     popularBadge: "RECOMMENDED"
   },
   apkHub: {
