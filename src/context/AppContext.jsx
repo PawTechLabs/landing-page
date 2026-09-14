@@ -68,11 +68,11 @@ export const AppProvider = ({ children }) => {
       releaseDate: '14/09/2026',
       fileSize: '77.5 MB',
       fileName: 'ipif-v1.0.2.apk',
-      sha256: '1f0e06f6d7d041cfb21c705d2198439e8b50f7a59c4a94d62ce060d908eabb4c',
+      sha256: '75804fd9596429317d447e09416c370ecf1e46fc40f5dc95c6c983e1de538df6',
       changelog: lang === 'vi' 
-        ? '• Cập nhật mẹo chăm sóc hôm nay: Nhấn vào mẹo mở ngay chi tiết bài viết cẩm nang.\n• Cải tiến thanh tương tác bài đăng: Căn đều vừa vặn nút Chia sẻ trên mọi kích thước màn hình.\n• Tối ưu tải và hiển thị hình ảnh bài đăng mượt mà giữa các thiết bị.\n• Nâng cấp hiệu năng và sửa các lỗi trải nghiệm.'
-        : '• Direct Care Tips Navigation: Tap any daily tip to open its full article detail immediately.\n• Redesigned Post Action Bar: Centered and responsive Like/Comment/Share buttons.\n• Seamless multi-device image loading and display.\n• General performance optimizations and fixes.',
-      totalDownloads: 14650,
+        ? '• Hỗ trợ toàn diện các định dạng ảnh: Samsung/iPhone HEIC/HEIF, AVIF, GIF, BMP, TIFF, SVG, WebP, PNG, JPG.\n• Nâng cấp độ phân giải ảnh 2K sắc nét vượt trội khi đăng bài, tải ảnh thú cưng và đại diện.\n• Đồng bộ lưu trữ đám mây Cloudflare R2: Ảnh hiển thị tức thì và đồng nhất trên mọi thiết bị.\n• Tối ưu thanh tương tác bài đăng & mở nhanh cẩm nang chăm sóc từ trang chủ.'
+        : '• Comprehensive image format support: HEIC/HEIF (Samsung & iPhone), AVIF, GIF, BMP, TIFF, SVG, WebP, PNG, JPG.\n• Crystal-clear 2K high-resolution uploads for posts, pet profiles, and avatars.\n• Cloudflare R2 Cloud Storage sync: Seamless real-time image availability across all devices.\n• Optimized post action bar & instant navigation to pet care guides.',
+      totalDownloads: 14720,
       customBlobUrl: null
     };
   });
