@@ -68,11 +68,11 @@ export const AppProvider = ({ children }) => {
       releaseDate: '14/09/2026',
       fileSize: '77.5 MB',
       fileName: 'ipif-v1.0.2.apk',
-      sha256: '75804fd9596429317d447e09416c370ecf1e46fc40f5dc95c6c983e1de538df6',
+      sha256: 'de327e26c2ef4c3f969b106828bd6a521d95f0a1d4ad652af3fca9297c43dd23',
       changelog: lang === 'vi' 
-        ? '• Hỗ trợ toàn diện các định dạng ảnh: Samsung/iPhone HEIC/HEIF, AVIF, GIF, BMP, TIFF, SVG, WebP, PNG, JPG.\n• Nâng cấp độ phân giải ảnh 2K sắc nét vượt trội khi đăng bài, tải ảnh thú cưng và đại diện.\n• Đồng bộ lưu trữ đám mây Cloudflare R2: Ảnh hiển thị tức thì và đồng nhất trên mọi thiết bị.\n• Tối ưu thanh tương tác bài đăng & mở nhanh cẩm nang chăm sóc từ trang chủ.'
-        : '• Comprehensive image format support: HEIC/HEIF (Samsung & iPhone), AVIF, GIF, BMP, TIFF, SVG, WebP, PNG, JPG.\n• Crystal-clear 2K high-resolution uploads for posts, pet profiles, and avatars.\n• Cloudflare R2 Cloud Storage sync: Seamless real-time image availability across all devices.\n• Optimized post action bar & instant navigation to pet care guides.',
-      totalDownloads: 14720,
+        ? '• Ra mắt hệ thống Hội viên VIP: Nuôi không giới hạn thú cưng (gói Thường tối đa 2 bé), tặng kèm Xu ảo chăm sóc thú cưng.\n• Tính năng Xuất Sổ Y Bạ & Tiêm Chủng (PDF) chuẩn y tế: Xuất và in ấn hồ sơ sức khỏe thú cưng tiện lợi.\n• Tối ưu hệ thống thanh toán VietQR gói cước: Dùng thử 39K & Tiêu chuẩn 50K.\n• Hỗ trợ toàn diện các định dạng ảnh: HEIC/HEIF Samsung & iPhone, AVIF, GIF, WebP, PNG, JPG sắc nét 2K qua Cloudflare R2.'
+        : '• VIP Membership Launch: Unlimited pet profiles (free accounts limited to 2 pets), bonus Pet Coins for care activities.\n• Medical-grade Health & Vaccination PDF Export: Easily export and print complete pet medical records.\n• Enhanced VietQR automated subscription payments with Trial 39K & Standard 50K plans.\n• Full multi-format 2K image support: Samsung & iPhone HEIC/HEIF, AVIF, GIF, WebP, PNG, JPG via Cloudflare R2.',
+      totalDownloads: 14850,
       customBlobUrl: null
     };
   });
