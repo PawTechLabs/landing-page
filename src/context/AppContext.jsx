@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (parsed && parsed.version === 'v1.0.1') {
+        if (parsed && parsed.version === 'v1.0.2') {
           return parsed;
         }
       } catch (e) {
@@ -64,15 +64,15 @@ export const AppProvider = ({ children }) => {
       }
     }
     return {
-      version: 'v1.0.1',
-      releaseDate: '13/09/2026',
-      fileSize: '80.8 MB',
-      fileName: 'ipif-v1.0.1.apk',
-      sha256: '1ed26365f9448c8f8e9502ca877b5251a46df9b6faef33e093be25b558e9926d',
+      version: 'v1.0.2',
+      releaseDate: '14/09/2026',
+      fileSize: '77.5 MB',
+      fileName: 'ipif-v1.0.2.apk',
+      sha256: '1f0e06f6d7d041cfb21c705d2198439e8b50f7a59c4a94d62ce060d908eabb4c',
       changelog: lang === 'vi' 
-        ? '• Nâng cấp bản đồ Google Maps HD tiếng Việt cực sắc nét, chi tiết và không watermark.\n• Khắc phục hoàn toàn lỗi hiển thị thú cưng ảo (nhận diện đúng chú cún Corgi ngay khi mở màn hình).\n• Sắp xếp lại giao diện thanh trạng thái thú ảo, khắc phục lỗi chữ đè lấn chỉ số.\n• Tối ưu tải file APK một chạm mượt mà trên mọi thiết bị.'
-        : '• Upgraded to high-definition Google Maps tiles with native Vietnamese labeling and no watermark.\n• Fixed virtual pet initial species load to display Corgi dog instantly.\n• Redesigned virtual pet top HUD to eliminate text and stats overlap.\n• Optimized single-tap APK download experience on mobile browsers.',
-      totalDownloads: 14280,
+        ? '• Cập nhật mẹo chăm sóc hôm nay: Nhấn vào mẹo mở ngay chi tiết bài viết cẩm nang.\n• Cải tiến thanh tương tác bài đăng: Căn đều vừa vặn nút Chia sẻ trên mọi kích thước màn hình.\n• Tối ưu tải và hiển thị hình ảnh bài đăng mượt mà giữa các thiết bị.\n• Nâng cấp hiệu năng và sửa các lỗi trải nghiệm.'
+        : '• Direct Care Tips Navigation: Tap any daily tip to open its full article detail immediately.\n• Redesigned Post Action Bar: Centered and responsive Like/Comment/Share buttons.\n• Seamless multi-device image loading and display.\n• General performance optimizations and fixes.',
+      totalDownloads: 14650,
       customBlobUrl: null
     };
   });
