@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (parsed && parsed.version === 'v1.0.3') {
+        if (parsed && parsed.version === 'v1.0.4') {
           return parsed;
         }
       } catch (e) {
@@ -64,15 +64,15 @@ export const AppProvider = ({ children }) => {
       }
     }
     return {
-      version: 'v1.0.3',
+      version: 'v1.0.4',
       releaseDate: '18/09/2026',
-      fileSize: '79.4 MB',
-      fileName: 'ipif-v1.0.3.apk',
-      sha256: '1d88e5d7afdfb111c44c34a7b34226c4ee504af862c23d1b37d2cb87f667de00',
+      fileSize: '78.8 MB',
+      fileName: 'ipif-v1.0.4.apk',
+      sha256: '60a76d96a892e2077083bac6dc71211f0ab708df154dd38353cd920870b19989',
       changelog: lang === 'vi' 
-        ? '• Tích hợp Trợ lý ảo AI Chatbot thông minh: Tư vấn y tế, hành vi & dinh dưỡng thú cưng 24/7 trực quan với định dạng Markdown.\n• Tinh chỉnh giao diện: Bo viền Avatar chuẩn xác chống tràn viền, nút AI nổi bo góc mượt mà không tì vết.\n• Minh bạch trải nghiệm Cửa hàng IPIF Mart: Thêm nhãn & thông báo thử nghiệm sản phẩm đối tác mẫu.\n• Tối ưu hoá luồng tạo thú cưng chuẩn Multipart FormData và ổn định luồng thanh toán VietQR gói VIP.'
-        : '• Integrated Smart AI Chatbot Assistant: 24/7 pet health, care and nutrition guidance with rich Markdown formatting.\n• UI Polish: Pixel-perfect avatar circular cropping across devices and ultra-smooth 3D floating AI assistant button.\n• Transparent Pet Mart Experience: Added preview badges and testing disclaimers for mock catalog items.\n• Backend & Network Stability: Hardened pet profile multipart creation and reliable VietQR VIP subscription checkout.',
-      totalDownloads: 15320,
+        ? '• Loại bỏ hoàn toàn nút Icon AI trôi nổi gây cản trở và che khuất màn hình.\n• Tinh chỉnh giao diện: Bo viền Avatar chuẩn xác chống tràn viền trên toàn bộ các màn hình.\n• Minh bạch trải nghiệm Cửa hàng IPIF Mart: Thêm nhãn & thông báo thử nghiệm sản phẩm đối tác mẫu.\n• Tối ưu hoá luồng tạo thú cưng chuẩn Multipart FormData và ổn định luồng thanh toán VietQR gói VIP.'
+        : '• Completely removed floating AI icon button to keep the screen clean and unobstructed.\n• UI Polish: Pixel-perfect avatar circular cropping across devices.\n• Transparent Pet Mart Experience: Added preview badges and testing disclaimers for mock catalog items.\n• Backend & Network Stability: Hardened pet profile multipart creation and reliable VietQR VIP subscription checkout.',
+      totalDownloads: 15450,
       customBlobUrl: null
     };
   });
