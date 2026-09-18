@@ -111,7 +111,7 @@ export const AppProvider = ({ children }) => {
     setDownloadProgress(10);
 
     // Trigger single download
-    const fallbackFile = apkInfo.fileName || 'ipif-v1.0.1.apk';
+    const fallbackFile = apkInfo.fileName || 'ipif-latest.apk';
     const downloadUrl = apkInfo.customBlobUrl || `/${fallbackFile}`;
     const a = document.createElement('a');
     a.href = downloadUrl;
