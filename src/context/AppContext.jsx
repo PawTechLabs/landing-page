@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (parsed && parsed.version === 'v1.0.2') {
+        if (parsed && parsed.version === 'v1.0.3') {
           return parsed;
         }
       } catch (e) {
@@ -64,15 +64,15 @@ export const AppProvider = ({ children }) => {
       }
     }
     return {
-      version: 'v1.0.2',
-      releaseDate: '14/09/2026',
-      fileSize: '77.5 MB',
-      fileName: 'ipif-v1.0.2.apk',
-      sha256: 'de327e26c2ef4c3f969b106828bd6a521d95f0a1d4ad652af3fca9297c43dd23',
+      version: 'v1.0.3',
+      releaseDate: '18/09/2026',
+      fileSize: '79.4 MB',
+      fileName: 'ipif-v1.0.3.apk',
+      sha256: '1d88e5d7afdfb111c44c34a7b34226c4ee504af862c23d1b37d2cb87f667de00',
       changelog: lang === 'vi' 
-        ? '• Ra mắt hệ thống Hội viên VIP: Nuôi không giới hạn thú cưng (gói Thường tối đa 2 bé), tặng kèm Xu ảo chăm sóc thú cưng.\n• Tính năng Xuất Sổ Y Bạ & Tiêm Chủng (PDF) chuẩn y tế: Xuất và in ấn hồ sơ sức khỏe thú cưng tiện lợi.\n• Tối ưu hệ thống thanh toán VietQR gói cước: Dùng thử 39K & Tiêu chuẩn 50K.\n• Hỗ trợ toàn diện các định dạng ảnh: HEIC/HEIF Samsung & iPhone, AVIF, GIF, WebP, PNG, JPG sắc nét 2K qua Cloudflare R2.'
-        : '• VIP Membership Launch: Unlimited pet profiles (free accounts limited to 2 pets), bonus Pet Coins for care activities.\n• Medical-grade Health & Vaccination PDF Export: Easily export and print complete pet medical records.\n• Enhanced VietQR automated subscription payments with Trial 39K & Standard 50K plans.\n• Full multi-format 2K image support: Samsung & iPhone HEIC/HEIF, AVIF, GIF, WebP, PNG, JPG via Cloudflare R2.',
-      totalDownloads: 14850,
+        ? '• Tích hợp Trợ lý ảo AI Chatbot thông minh: Tư vấn y tế, hành vi & dinh dưỡng thú cưng 24/7 trực quan với định dạng Markdown.\n• Tinh chỉnh giao diện: Bo viền Avatar chuẩn xác chống tràn viền, nút AI nổi bo góc mượt mà không tì vết.\n• Minh bạch trải nghiệm Cửa hàng IPIF Mart: Thêm nhãn & thông báo thử nghiệm sản phẩm đối tác mẫu.\n• Tối ưu hoá luồng tạo thú cưng chuẩn Multipart FormData và ổn định luồng thanh toán VietQR gói VIP.'
+        : '• Integrated Smart AI Chatbot Assistant: 24/7 pet health, care and nutrition guidance with rich Markdown formatting.\n• UI Polish: Pixel-perfect avatar circular cropping across devices and ultra-smooth 3D floating AI assistant button.\n• Transparent Pet Mart Experience: Added preview badges and testing disclaimers for mock catalog items.\n• Backend & Network Stability: Hardened pet profile multipart creation and reliable VietQR VIP subscription checkout.',
+      totalDownloads: 15320,
       customBlobUrl: null
     };
   });
