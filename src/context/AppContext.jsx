@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (parsed && parsed.version === 'v1.0.4') {
+        if (parsed && parsed.version === 'v1.0.5') {
           return parsed;
         }
       } catch (e) {
@@ -64,14 +64,14 @@ export const AppProvider = ({ children }) => {
       }
     }
     return {
-      version: 'v1.0.4',
+      version: 'v1.0.5',
       releaseDate: '18/09/2026',
       fileSize: '78.8 MB',
-      fileName: 'ipif-v1.0.4.apk',
-      sha256: '60a76d96a892e2077083bac6dc71211f0ab708df154dd38353cd920870b19989',
+      fileName: 'ipif-v1.0.5.apk',
+      sha256: '88b0c8d152e1a5b46152d7042318eec47b56c46d0283a20683f50d5328e852e1',
       changelog: lang === 'vi' 
-        ? '• Loại bỏ hoàn toàn nút Icon AI trôi nổi gây cản trở và che khuất màn hình.\n• Tinh chỉnh giao diện: Bo viền Avatar chuẩn xác chống tràn viền trên toàn bộ các màn hình.\n• Minh bạch trải nghiệm Cửa hàng IPIF Mart: Thêm nhãn & thông báo thử nghiệm sản phẩm đối tác mẫu.\n• Tối ưu hoá luồng tạo thú cưng chuẩn Multipart FormData và ổn định luồng thanh toán VietQR gói VIP.'
-        : '• Completely removed floating AI icon button to keep the screen clean and unobstructed.\n• UI Polish: Pixel-perfect avatar circular cropping across devices.\n• Transparent Pet Mart Experience: Added preview badges and testing disclaimers for mock catalog items.\n• Backend & Network Stability: Hardened pet profile multipart creation and reliable VietQR VIP subscription checkout.',
+        ? '• Làm sạch toàn bộ giao diện: Loại bỏ triệt để tất cả emoji không phù hợp trên dialog, nút bấm, tiêu đề và danh mục.\n• Chuẩn hóa hệ thống icon: Thay thế bằng Material Icons chuyên nghiệp và đồng bộ trên toàn ứng dụng.\n• Loại bỏ hoàn toàn nút Icon AI trôi nổi gây cản trở và che khuất màn hình.\n• Minh bạch trải nghiệm Cửa hàng IPIF Mart: Thêm nhãn & thông báo thử nghiệm sản phẩm đối tác mẫu.\n• Tối ưu hoá luồng tạo thú cưng chuẩn Multipart FormData và ổn định luồng thanh toán VietQR gói VIP.'
+        : '• UI Polish & Cleanliness: Completely eliminated informal emojis across all dialogs, buttons, and headers, replaced with standardized Material Icons.\n• Removed floating AI button to ensure a clean, unobstructed user experience.\n• Transparent Pet Mart: Added preview badges and testing disclaimers for mock catalog items.\n• Backend & Network Stability: Multipart FormData pet profile creation and reliable VietQR VIP subscription checkout.',
       totalDownloads: 15450,
       customBlobUrl: null
     };
