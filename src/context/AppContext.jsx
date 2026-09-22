@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (parsed && parsed.version === 'v1.0.8') {
+        if (parsed && parsed.version === 'v1.0.9') {
           return parsed;
         }
       } catch (e) {
@@ -64,15 +64,15 @@ export const AppProvider = ({ children }) => {
       }
     }
     return {
-      version: 'v1.0.8',
+      version: 'v1.0.9',
       releaseDate: '22/09/2026',
-      fileSize: '78.8 MB',
-      fileName: 'ipif-v1.0.8.apk',
-      sha256: '6d0a02a3d8a3f94f0a5874c7dc096b59fd7b82aa3929940744613af61fbb8398',
+      fileSize: '77.9 MB',
+      fileName: 'ipif-v1.0.9.apk',
+      sha256: '34e9fff0a4ebe50ab09342679429dfa9e3e9adc3bff480c67951befd7ba39439',
       changelog: lang === 'vi' 
-        ? '• Tích hợp Facebook Login với App ID và Client Token mới.\n• Tích hợp Google OAuth 2.0 Client ID chính thức cho dự án IPIF.\n• Đăng nhập trực tiếp bằng tài khoản Google & Facebook thật của người dùng.\n• Tự động đồng bộ và bảo toàn dữ liệu thú cưng, hồ sơ y tế và lịch sử giao dịch.'
-        : '• Integrated official Facebook Login with App ID & Client Token.\n• Integrated official Google OAuth 2.0 Client ID for IPIF.\n• Direct real Google & Facebook sign-in with full data persistence.\n• Seamless synchronization of pet records, medical history, and subscriptions.',
-      totalDownloads: 17250,
+        ? '• Tối ưu hóa xác thực: Sử dụng Google OAuth 2.0 Client ID chính thức, loại bỏ SDK Facebook cồng kềnh.\n• Giao diện đăng nhập tinh giản, hiện đại và bảo mật tuyệt đối.\n• Giảm dung lượng ứng dụng và tăng tốc độ khởi động.\n• Tự động đồng bộ và bảo toàn dữ liệu thú cưng, hồ sơ y tế và lịch sử giao dịch.'
+        : '• Streamlined authentication: Powered by official Google OAuth 2.0 Client ID, removed third-party Facebook SDK.\n• Refined and modern login UI with enhanced security.\n• Reduced app package size and accelerated startup performance.\n• Seamless synchronization of pet records, medical history, and subscriptions.',
+      totalDownloads: 17890,
       customBlobUrl: null
     };
   });
