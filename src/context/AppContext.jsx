@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (parsed && parsed.version === 'v1.0.7') {
+        if (parsed && parsed.version === 'v1.0.8') {
           return parsed;
         }
       } catch (e) {
@@ -64,15 +64,15 @@ export const AppProvider = ({ children }) => {
       }
     }
     return {
-      version: 'v1.0.7',
+      version: 'v1.0.8',
       releaseDate: '22/09/2026',
       fileSize: '78.8 MB',
-      fileName: 'ipif-v1.0.7.apk',
-      sha256: '2ab471c576d80a7408e2d4e8d7b997f2ccad853780de6629f6662e630697dfe3',
+      fileName: 'ipif-v1.0.8.apk',
+      sha256: '6d0a02a3d8a3f94f0a5874c7dc096b59fd7b82aa3929940744613af61fbb8398',
       changelog: lang === 'vi' 
-        ? '• Tích hợp Google OAuth 2.0 Client ID chính thức cho dự án IPIF.\n• Đăng nhập trực tiếp bằng tài khoản Google thật của người dùng, loại bỏ hoàn toàn modal thử nghiệm.\n• Tự động đồng bộ và bảo toàn dữ liệu thú cưng, hồ sơ y tế và lịch sử giao dịch.\n• Kèm Trợ lý ảo IPIF AI Chat và Cổng thanh toán VietQR tự động.'
-        : '• Integrated official Google OAuth 2.0 Client ID for IPIF production project.\n• Direct real Google account sign-in with full data persistence, completely removing fallback testing modals.\n• Seamless synchronization of pet records, medical history, and subscriptions.\n• Powered with 24/7 AI Chat Assistant and VietQR automated payment.',
-      totalDownloads: 16820,
+        ? '• Tích hợp Facebook Login với App ID và Client Token mới.\n• Tích hợp Google OAuth 2.0 Client ID chính thức cho dự án IPIF.\n• Đăng nhập trực tiếp bằng tài khoản Google & Facebook thật của người dùng.\n• Tự động đồng bộ và bảo toàn dữ liệu thú cưng, hồ sơ y tế và lịch sử giao dịch.'
+        : '• Integrated official Facebook Login with App ID & Client Token.\n• Integrated official Google OAuth 2.0 Client ID for IPIF.\n• Direct real Google & Facebook sign-in with full data persistence.\n• Seamless synchronization of pet records, medical history, and subscriptions.',
+      totalDownloads: 17250,
       customBlobUrl: null
     };
   });
