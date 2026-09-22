@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (parsed && parsed.version === 'v1.0.6') {
+        if (parsed && parsed.version === 'v1.0.7') {
           return parsed;
         }
       } catch (e) {
@@ -64,15 +64,15 @@ export const AppProvider = ({ children }) => {
       }
     }
     return {
-      version: 'v1.0.6',
-      releaseDate: '18/09/2026',
-      fileSize: '78.9 MB',
-      fileName: 'ipif-v1.0.6.apk',
-      sha256: '7959448fcba17b8a5c3da73f9cdb6e3ce7a0f049d183cbc9ec46d9c31e6c97e3',
+      version: 'v1.0.7',
+      releaseDate: '22/09/2026',
+      fileSize: '78.8 MB',
+      fileName: 'ipif-v1.0.7.apk',
+      sha256: '2ab471c576d80a7408e2d4e8d7b997f2ccad853780de6629f6662e630697dfe3',
       changelog: lang === 'vi' 
-        ? '• Tích hợp Trợ lý IPIF AI Chat tại các vị trí tiện lợi: Nút chuyên dụng góc trên Header Trang chủ, mục Truy cập nhanh và Cài đặt Dịch vụ trong Profile.\n• Trải nghiệm AI Chatbox mượt mà: Hỏi đáp tức thì về bệnh lý, dinh dưỡng, hành vi thú cưng với giao diện hội thoại chuyên nghiệp.\n• Giao diện sạch sẽ & Chuẩn hóa: Toàn bộ biểu tượng chuyển sang Material Icons sắc nét, không còn nút trôi nổi che màn hình.\n• Minh bạch trải nghiệm Cửa hàng IPIF Mart: Thêm nhãn & thông báo thử nghiệm sản phẩm đối tác mẫu.\n• Tối ưu hoá luồng tạo thú cưng chuẩn Multipart FormData và ổn định luồng thanh toán VietQR gói VIP.'
-        : '• Integrated IPIF AI Assistant into convenient access points: Top Home Header button, Quick Access grid, and Profile Services menu.\n• Smooth AI Chatbox: Instant Q&A for pet health, nutrition, and behavior with modern markdown conversational UI.\n• Clean UI & Standardized Icons: Refined Material Icons with zero floating overlay clutter.\n• Transparent Pet Mart: Preview badges and testing disclaimers for mock catalog items.\n• Backend & Network Stability: Multipart FormData pet profile creation and reliable VietQR VIP subscription checkout.',
-      totalDownloads: 15450,
+        ? '• Tích hợp Google OAuth 2.0 Client ID chính thức cho dự án IPIF.\n• Đăng nhập trực tiếp bằng tài khoản Google thật của người dùng, loại bỏ hoàn toàn modal thử nghiệm.\n• Tự động đồng bộ và bảo toàn dữ liệu thú cưng, hồ sơ y tế và lịch sử giao dịch.\n• Kèm Trợ lý ảo IPIF AI Chat và Cổng thanh toán VietQR tự động.'
+        : '• Integrated official Google OAuth 2.0 Client ID for IPIF production project.\n• Direct real Google account sign-in with full data persistence, completely removing fallback testing modals.\n• Seamless synchronization of pet records, medical history, and subscriptions.\n• Powered with 24/7 AI Chat Assistant and VietQR automated payment.',
+      totalDownloads: 16820,
       customBlobUrl: null
     };
   });
