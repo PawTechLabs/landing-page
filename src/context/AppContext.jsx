@@ -81,6 +81,21 @@ export const AppProvider = ({ children }) => {
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
 
+  // 4. Google Play Store State
+  const [playStoreUrl, setPlayStoreUrl] = useState(() => {
+    return localStorage.getItem('ipif_playstore_url') || '';
+  });
+  const [isPlayStoreNoticeOpen, setIsPlayStoreNoticeOpen] = useState(false);
+
+  const updatePlayStoreUrl = (url) => {
+    setPlayStoreUrl(url || '');
+    if (url && url.trim()) {
+      localStorage.setItem('ipif_playstore_url', url.trim());
+    } else {
+      localStorage.removeItem('ipif_playstore_url');
+    }
+  };
+
   // Update APK from Admin
   const updateApk = (newMetadata, fileObject) => {
     let customUrl = null;
@@ -88,6 +103,10 @@ export const AppProvider = ({ children }) => {
       customUrl = URL.createObjectURL(fileObject);
     }
     
+    if (newMetadata && newMetadata.playStoreUrl !== undefined) {
+      updatePlayStoreUrl(newMetadata.playStoreUrl);
+    }
+
     const updated = {
       ...apkInfo,
       ...newMetadata,
@@ -173,7 +192,11 @@ export const AppProvider = ({ children }) => {
       downloading,
       downloadProgress,
       isAdminOpen,
-      setIsAdminOpen
+      setIsAdminOpen,
+      playStoreUrl,
+      updatePlayStoreUrl,
+      isPlayStoreNoticeOpen,
+      setIsPlayStoreNoticeOpen
     }}>
       {children}
     </AppContext.Provider>

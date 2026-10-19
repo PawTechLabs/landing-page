@@ -3,7 +3,7 @@ import { useApp } from '../context/AppContext';
 import { X, Upload, Settings, CheckCircle2, ShieldAlert, KeyRound, FileCheck } from 'lucide-react';
 
 export const AdminApkModal = () => {
-  const { t, apkInfo, updateApk, isAdminOpen, setIsAdminOpen } = useApp();
+  const { t, apkInfo, updateApk, isAdminOpen, setIsAdminOpen, playStoreUrl } = useApp();
 
   const [passcode, setPasscode] = useState('');
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -11,6 +11,7 @@ export const AdminApkModal = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [version, setVersion] = useState(apkInfo.version);
   const [changelog, setChangelog] = useState(apkInfo.changelog);
+  const [urlInput, setUrlInput] = useState(playStoreUrl || '');
   const [publishedSuccess, setPublishedSuccess] = useState(false);
 
   if (!isAdminOpen) return null;
@@ -36,7 +37,8 @@ export const AdminApkModal = () => {
     updateApk(
       {
         version: version || apkInfo.version,
-        changelog: changelog || apkInfo.changelog
+        changelog: changelog || apkInfo.changelog,
+        playStoreUrl: urlInput
       },
       selectedFile
     );
@@ -165,6 +167,24 @@ export const AdminApkModal = () => {
                 onChange={(e) => setChangelog(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs font-mono outline-none focus:ring-2 focus:ring-brand-500 leading-relaxed"
               />
+            </div>
+
+            {/* Google Play Store URL Input */}
+            <div className="space-y-1.5 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700">
+              <label className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center justify-between">
+                <span>{t('playStore.adminUrlLabel')}</span>
+                <span className="text-[10px] text-amber-500 font-semibold">{t('playStore.statusComing')}</span>
+              </label>
+              <input
+                type="url"
+                value={urlInput}
+                onChange={(e) => setUrlInput(e.target.value)}
+                placeholder={t('playStore.adminUrlPlaceholder')}
+                className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs font-mono outline-none focus:ring-2 focus:ring-brand-500"
+              />
+              <p className="text-[10px] text-slate-500 dark:text-slate-400">
+                Khi có link chính thức từ Google Play Store, bạn dán vào đây và bấm lưu. Toàn bộ nút trên Landing Page sẽ tự động chuyển hướng sang link này!
+              </p>
             </div>
 
             <div className="pt-2 flex items-center justify-end gap-3">

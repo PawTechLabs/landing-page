@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
 import { Heart, Send, Globe, Mail, Phone } from 'lucide-react';
+import { GooglePlayBadge } from './GooglePlayBadge';
 
 export const Footer = () => {
   const { t } = useApp();
@@ -36,6 +37,10 @@ export const Footer = () => {
               <a href="#" className="p-2.5 rounded-xl bg-slate-800 hover:bg-brand-500 text-slate-300 hover:text-white transition-colors">
                 <Phone className="w-4 h-4" />
               </a>
+            </div>
+
+            <div className="pt-2">
+              <GooglePlayBadge variant="compact" />
             </div>
           </div>
 

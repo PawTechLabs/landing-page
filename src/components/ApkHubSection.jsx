@@ -4,6 +4,7 @@ import {
   Download, ShieldCheck, FileCheck, Calendar, HardDrive, 
   Settings, CheckCircle2, AlertCircle, Smartphone, Hash, Sparkles
 } from 'lucide-react';
+import { GooglePlayBadge } from './GooglePlayBadge';
 
 export const ApkHubSection = () => {
   const { t, apkInfo, downloadApk, downloading, downloadProgress, setIsAdminOpen } = useApp();
@@ -57,30 +58,52 @@ export const ApkHubSection = () => {
             </div>
           </div>
 
-          {/* Download Button Action Zone */}
-          <div className="text-center space-y-4 pt-2">
-            
-            <button
-              onClick={downloadApk}
-              disabled={downloading}
-              className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-brand-500 via-orange-500 to-amber-500 hover:from-brand-600 hover:to-amber-600 text-white font-black text-lg shadow-3d-orange active:translate-y-1 transition-all duration-200 inline-flex items-center justify-center gap-3 transform hover:-translate-y-1"
-            >
-              <Download className="w-6 h-6 animate-bounce-subtle" />
-              <span>{downloading ? t('apkHub.downloading') + `${downloadProgress}%` : t('apkHub.downloadBtn')}</span>
-            </button>
+          {/* Dual Distribution Action Zone: Direct APK & Google Play */}
+          <div className="space-y-6 pt-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Option A: Direct APK Download */}
+              <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between space-y-4 text-left">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Cài Đặt Trực Tiếp</span>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                      Đã Kiểm Định OWASP
+                    </span>
+                  </div>
+                  <h4 className="text-base font-extrabold text-slate-900 dark:text-white mt-1.5">File Cài Đặt Android (.apk)</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                    Tải về cài đặt tức thì mà không cần tài khoản Google Play. Phù hợp cho máy cá nhân và tester.
+                  </p>
+                </div>
 
-            {downloading && (
-              <div className="w-full max-w-md mx-auto bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden shadow-inner">
-                <div 
-                  className="bg-gradient-to-r from-brand-500 via-orange-400 to-emerald-400 h-full transition-all duration-300 ease-out" 
-                  style={{ width: `${downloadProgress}%` }}
-                />
+                <div className="space-y-3 pt-2">
+                  <button
+                    onClick={downloadApk}
+                    disabled={downloading}
+                    className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-brand-500 via-orange-500 to-amber-500 hover:from-brand-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-3d-orange active:translate-y-1 transition-all duration-200 flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5"
+                  >
+                    <Download className="w-5 h-5 animate-bounce-subtle" />
+                    <span>{downloading ? t('apkHub.downloading') + `${downloadProgress}%` : t('apkHub.downloadBtn')}</span>
+                  </button>
+
+                  {downloading && (
+                    <div className="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden shadow-inner">
+                      <div 
+                        className="bg-gradient-to-r from-brand-500 via-orange-400 to-emerald-400 h-full transition-all duration-300 ease-out" 
+                        style={{ width: `${downloadProgress}%` }}
+                      />
+                    </div>
+                  )}
+
+                  <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                    <span>{apkInfo.fileName}</span>
+                    <span>{apkInfo.fileSize}</span>
+                  </div>
+                </div>
               </div>
-            )}
 
-            <div className="flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-semibold">
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
-              <span>File name: {apkInfo.fileName}</span>
+              {/* Option B: Google Play Store Badge Card */}
+              <GooglePlayBadge variant="card" />
             </div>
           </div>
 

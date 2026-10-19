@@ -286,5 +286,18 @@ export const en = {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     rights: "© 2026 IPIF Team. All rights reserved."
+  },
+  playStore: {
+    badgePre: "COMING SOON ON",
+    badgeGet: "GET IT ON",
+    storeName: "Google Play",
+    statusComing: "Coming Soon",
+    statusReviewing: "In Review",
+    noticeTitle: "Coming Soon to Google Play!",
+    noticeDesc: "The IPIF app is currently undergoing official release review on Google Play Store. You can download the direct, security-verified APK file to experience all features right now!",
+    downloadApkNow: "Download APK Directly",
+    closeBtn: "Got it",
+    adminUrlLabel: "Google Play Store URL (Optional):",
+    adminUrlPlaceholder: "https://play.google.com/store/apps/details?id=app.ipif.ipif_mobile"
   }
 };

@@ -3,6 +3,7 @@ import { useApp } from '../context/AppContext';
 import { Download, ShieldCheck, ChevronRight } from 'lucide-react';
 import { gsap, useGSAP, prefersReduced, Words } from '../lib/motion';
 import { PhoneMockup } from './PhoneMockup';
+import { GooglePlayBadge } from './GooglePlayBadge';
 
 export const Hero = () => {
   const { t, apkInfo, downloadApk, downloading, downloadProgress } = useApp();
@@ -96,19 +97,21 @@ export const Hero = () => {
               {t('hero.description')}
             </p>
 
-            <div data-hero-body className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div data-hero-body className="mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3.5">
               <button
                 onClick={downloadApk}
                 disabled={downloading}
-                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-brand-500 via-orange-500 to-amber-500 hover:from-brand-600 hover:to-amber-600 text-white font-extrabold text-base shadow-3d-orange active:translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 hover:-translate-y-1 group"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 via-orange-500 to-amber-500 hover:from-brand-600 hover:to-amber-600 text-white font-extrabold text-base shadow-3d-orange active:translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 hover:-translate-y-1 group"
               >
                 <Download className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 <span>{downloading ? t('apkHub.downloading') + `${downloadProgress}%` : t('hero.primaryCta')}</span>
               </button>
 
+              <GooglePlayBadge variant="hero" />
+
               <a
                 href="#story"
-                className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-bold text-base border-2 border-slate-200 dark:border-slate-700 shadow-3d active:translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto px-5 py-3.5 rounded-2xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 font-bold text-sm border-2 border-slate-200 dark:border-slate-700 shadow-sm active:translate-y-1 transition-all duration-300 flex items-center justify-center gap-1.5 group"
               >
                 <span>{t('hero.secondaryCta')}</span>
                 <ChevronRight className="w-4 h-4 text-brand-500 group-hover:translate-x-1 transition-transform duration-300" />

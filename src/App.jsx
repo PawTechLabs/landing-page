@@ -12,6 +12,7 @@ import { TargetAudience } from './components/TargetAudience';
 import { PricingSection } from './components/PricingSection';
 import { ApkHubSection } from './components/ApkHubSection';
 import { AdminApkModal } from './components/AdminApkModal';
+import { PlayStoreNoticeModal } from './components/PlayStoreNoticeModal';
 import { InteractivePetWidget } from './components/InteractivePetWidget';
 import { Footer } from './components/Footer';
 
@@ -49,6 +50,7 @@ export default function App() {
 
         <InteractivePetWidget />
         <AdminApkModal />
+        <PlayStoreNoticeModal />
         <Footer />
       </div>
     </AppProvider>

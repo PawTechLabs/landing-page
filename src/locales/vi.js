@@ -286,5 +286,18 @@ export const vi = {
     privacy: "Chính sách bảo mật",
     terms: "Điều khoản sử dụng",
     rights: "© 2026 IPIF Team. Tất cả các quyền được bảo lưu."
+  },
+  playStore: {
+    badgePre: "SẮP CÓ TRÊN",
+    badgeGet: "TẢI TRÊN",
+    storeName: "Google Play",
+    statusComing: "Sắp ra mắt",
+    statusReviewing: "Đang kiểm duyệt",
+    noticeTitle: "Sắp Có Mặt Trên Google Play!",
+    noticeDesc: "Ứng dụng IPIF đang trong giai đoạn kiểm duyệt bản phát hành chính thức trên Google Play Store. Bạn có thể tải ngay file APK cài đặt trực tiếp để trải nghiệm sớm đầy đủ tính năng!",
+    downloadApkNow: "Tải Bản APK Cài Đặt Ngay",
+    closeBtn: "Đã hiểu",
+    adminUrlLabel: "Đường dẫn Google Play Store URL (Tùy chọn):",
+    adminUrlPlaceholder: "https://play.google.com/store/apps/details?id=app.ipif.ipif_mobile"
   }
 };
